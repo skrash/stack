@@ -16,3 +16,18 @@ class Stack():
         self.data = val
     def Next(self, val):
         self.__init__(val, copy.deepcopy(self))
+#version 3
+import copy
+
+class Stack():
+    def __init__(self, val, prev=None):
+        self.prev = prev
+        self.data = val
+    def Next(self, val):
+        self.__init__(val, copy.deepcopy(self))
+
+    def Prev(self,iter=0):
+        if iter == 0:
+            print(str(self.data))
+        else:
+            self.prev.Prev(iter - 1)
